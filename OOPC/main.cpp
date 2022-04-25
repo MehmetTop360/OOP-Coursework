@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-//	g++ *.cpp -o run
+//	g++ *.cpp -o run/
 
 #include "Game.h"
 
