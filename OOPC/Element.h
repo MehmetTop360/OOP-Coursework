@@ -5,11 +5,11 @@
 #include <vector>
 #include <sstream>
 
-#include "PeriodicTable.h"
+#include "Randomizer.h"
 
 using namespace std;
 
-class Element
+class Element : public Randomizer
 {
 private:
 
