@@ -4,22 +4,28 @@
 
 //	g++ *.cpp -o run/
 
-#include "Game.h"
+#include "Score.h"
+#include "PeriodicTable.h"
 
 using namespace std;
 
 int main()
 {
-    int i, n, m, temp, amountofGames = 0;
+    int i, n, m, temp, random, amountofGames = 0;
+
+    PeriodicTable tempobj;
+    tempobj.PrepareVector();
+
+    Score tempobje;
+    random=tempobje.Randomizer();
 
     cout << "Explaining Game bla bla bla";
-    Game tempobj;
-    tempobj.PrepareVector();
 
     cin >> m;
 
     for (amountofGames = 1; amountofGames < m; amountofGames++)
-    {
+    {   
+        cout << "What is the atomic number of " << vectorofelements.at(random).name;
         //AskQuestion();
         //TorF()
     }

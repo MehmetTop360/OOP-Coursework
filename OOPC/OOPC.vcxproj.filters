@@ -24,7 +24,7 @@
     <ClCompile Include="Element.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ANumber.cpp">
+    <ClCompile Include="Score.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PeriodicTable.cpp">
@@ -38,7 +38,7 @@
     <ClInclude Include="Element.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ANumber.h">
+    <ClInclude Include="Score.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PeriodicTable.h">
