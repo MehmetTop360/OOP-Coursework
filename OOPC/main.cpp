@@ -12,7 +12,7 @@ using namespace std;
 
 int main()
 {
-    int i, n, m, t, temp, random, answer, score, previousrandom, amountofGames = 0;
+    int i, n, m, t, l, temp, random, answer, score, previousrandom, amountofGames = 0;
     vector<string> vectorofelements = { "Hydrogen", "He - Helium", "Li - Lithium", "Be - Beryllium", "B - Boron", "C - Carbon", "N - Nitrogen,", "O - Oxygen,", "F - Fluorine", "Ne - Neon",
    "Na - Sodium",
    "Mg - Magnesium",
@@ -115,6 +115,7 @@ int main()
 
     Randomizer tempobject;
     Randomizer tempobje;
+    Randomizer tempobjec;
 
     cout << "Explaining Game bla bla bla" << endl;
 
@@ -126,9 +127,13 @@ int main()
         random = tempobject.GetRandom();
 
         if (previousrandom == random)
-        {   
-            t= tempobje.GetRandom();
+        {
+            t = tempobje.GetRandom();
             random = random + t;
+            if (random > 118) {
+                l = tempobje.GetRandom();
+                random = random - l;
+            };
             break;
         }
         cout << "What is the atomic number of " << vectorofelements.at(random) << endl;
@@ -137,7 +142,6 @@ int main()
         if (answer == vectorofanumber.at(random)) 
         {
             cout << "Correct answer!" << endl;
-            score++;
         }
         else {
             cout << "Wrong answer!" << endl;
