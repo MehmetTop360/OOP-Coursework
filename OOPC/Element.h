@@ -16,5 +16,4 @@ private:
 public:
     string name;
     int anumb;
-
 };

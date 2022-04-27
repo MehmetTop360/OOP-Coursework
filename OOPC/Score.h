@@ -5,8 +5,8 @@
 class Score : public Game
 {
 private:
-
+	int chance = 3;
 public:
-
-	int MadeaMistake();
+	int MadeaMistake() override;
+	int WarningMessage(int m) override;
 };

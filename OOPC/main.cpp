@@ -7,13 +7,13 @@
 #include "Randomizer.h"
 #include "Element.h"
 #include "Score.h"
+#include "Game.h"
 
 using namespace std;
 
 int main()
 {
     int i, n, m, t, l, temp, random, answer, negchance, warning, score, chances, previousrandom, amountofGames = 0;
-    chances = 3;
     random = 0;
     previousrandom = 0;
 
@@ -116,7 +116,7 @@ int main()
  
     Randomizer RandomObj;
     Score ChancesObj;
-    Game WarningObj;
+    Score WarningObj;
 
 
     cout << "Hello! Welcome to Chemistry element word game!" << endl;
@@ -147,14 +147,8 @@ int main()
         }
         else 
         {
-            ChancesObj.MadeaMistake() = negchance;
-            chances = chances - negchance;
-            cout << endl << "__________________________________________________________________________________________";
-        }
-
-        if (chances < 3)
-        {
-            cout << endl;
+            chances = ChancesObj.MadeaMistake();
+            cout << endl << "__________________________________________________________________________________________" << endl;
             WarningObj.WarningMessage(chances);
         }
 

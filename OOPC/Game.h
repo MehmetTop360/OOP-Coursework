@@ -13,9 +13,8 @@ private:
 
 protected:
 	int random = 0;
-	int chance = 1;
 public:
 	virtual int MadeaMistake() = 0;
-
-	int WarningMessage(int m);
+	virtual int GetRandom() = 0;
+	virtual int WarningMessage(int m) = 0;
 };
