@@ -4,15 +4,19 @@
 
 //	g++ *.cpp -o run/
 
-#include "Game.h"
 #include "Randomizer.h"
 #include "Element.h"
+#include "Score.h"
 
 using namespace std;
 
 int main()
 {
-    int i, n, m, t, l, temp, random, answer, score, previousrandom, amountofGames = 0;
+    int i, n, m, t, l, temp, random, answer, negchance, warning, score, chances, previousrandom, amountofGames = 0;
+    chances = 3;
+    random = 0;
+    previousrandom = 0;
+
     vector<string> vectorofelements = { "Hydrogen", "He - Helium", "Li - Lithium", "Be - Beryllium", "B - Boron", "C - Carbon", "N - Nitrogen,", "O - Oxygen,", "F - Fluorine", "Ne - Neon",
    "Na - Sodium",
    "Mg - Magnesium",
@@ -109,44 +113,58 @@ int main()
    "Hs - Hassium", "Mt - Meitnerium",
    "Ds - Darmstadtium", "Rg - Roentgenium", "Cn - Copernicium", "Nh - Nihonium", "Fl - Flerovium", "Mc - Moscovium", "Lv - Livermorium", "Ts - Tennessine", "Og - Oganesson" };
     vector<int> vectorofanumber = { 1,2,3,4,5,6,7,8,9,10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 0, 21, 22, 23, 24, 25, 26, 27, 28, 29,30, 31, 32, 33, 34, 35, 36, 37, 38, 39,40, 41, 42, 43, 44, 45, 46, 47, 48, 49,50, 51, 52, 53, 54, 55, 56, 57, 58, 59,60, 61, 62, 63, 64, 65, 66, 67, 68, 69,70, 71, 72, 73, 74, 75, 76, 77, 78, 79,80, 81, 82, 83, 84, 85, 86, 87, 88, 89,90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111 ,112, 113 , 114, 115, 116, 117, 118 };
+ 
+    Randomizer RandomObj;
+    Score ChancesObj;
+    Game WarningObj;
 
-    random = 0;
-    previousrandom = 0;
 
-    Randomizer tempobject;
-    Randomizer tempobje;
-    Randomizer tempobjec;
-
-    cout << "Explaining Game bla bla bla" << endl;
+    cout << "Hello! Welcome to Chemistry element word game!" << endl;
+    cout << "The questions will ask you the elements, and you will answer with their atomic numbers." << endl;
+    cout << "But be careful because you have 3 mistake chances." << endl;
+    cout << "Also your time will be recorded while you answer to each question as well." << endl;
+    cout << "Type the number of questions you want to play." << endl;
+    cout << endl;
 
     cin >> m;
-    m = m + 1;
 
-    for (amountofGames = 1; amountofGames < m; amountofGames++)
-    {   
-        random = tempobject.GetRandom();
+    cout << endl;
 
-        if (previousrandom == random)
-        {
-            t = tempobje.GetRandom();
-            random = random + t;
-            if (random > 118) {
-                l = tempobje.GetRandom();
-                random = random - l;
-            };
-            break;
-        }
+    for (amountofGames = 0; amountofGames < m; amountofGames++)
+    {
+        random = RandomObj.GetRandom();
+
         cout << "What is the atomic number of " << vectorofelements.at(random) << endl;
         cin >> answer;
         cout << endl;
-        if (answer == vectorofanumber.at(random)) 
+
+        if (answer == vectorofanumber.at(random))
         {
             cout << "Correct answer!" << endl;
+            cout << endl << "__________________________________________________________________________________________";
+            
+            //Positive scores
         }
-        else {
-            cout << "Wrong answer!" << endl;
+        else 
+        {
+            ChancesObj.MadeaMistake() = negchance;
+            chances = chances - negchance;
+            cout << endl << "__________________________________________________________________________________________";
         }
-        random = previousrandom;
+
+        if (chances < 3)
+        {
+            cout << endl;
+            WarningObj.WarningMessage(chances);
+        }
+
+        cout << endl;
+
+        if (chances == 0)
+        {
+            cout << "Your 3 chances have run out!" << endl;
+            break;
+        }
     }
 
     // Time // auto duration = duration_cast<seconds>(stop - start);
