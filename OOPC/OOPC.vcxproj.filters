@@ -21,13 +21,13 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Element.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Randomizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Score.cpp">
+    <ClCompile Include="Instructions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Branch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,13 +35,13 @@
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Element.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Randomizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Score.h">
+    <ClInclude Include="Instructions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Branch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

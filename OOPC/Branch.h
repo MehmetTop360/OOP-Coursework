@@ -4,16 +4,13 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
-
-#include "Randomizer.h"
-
+#include "Game.h"
 using namespace std;
 
-class Element : public Randomizer
+class Branch : public Game
 {
 private:
 
 public:
-    string name;
-    int anumb;
+	virtual void GetInstructions() = 0;
 };

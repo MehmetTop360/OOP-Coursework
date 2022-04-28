@@ -9,5 +9,5 @@ class Randomizer : public Game
 private:
 
 public:
-	int GetRandom() override;
+	int GetRandom();
 };

@@ -5,7 +5,6 @@
 #include <time.h>       /* time */
 
 #include "Randomizer.h"
-#include "Element.h"
 
 using namespace std;
 
