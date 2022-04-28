@@ -2,6 +2,8 @@
 #include <vector> /* for the vectors */
 #include <string> /* for the stringed vector */
 #include <chrono> /* for the time */
+#include <ctime> /* again for the time*/
+#include <ratio> /* period is a ratio type*/
 
 //	g++ *.cpp -o run/
 
@@ -11,7 +13,7 @@
 #include "Branch.h"
 #include "Randomizer.h"
 
-using namespace std;
+using namespace std::chrono;
 
 int main()
 {
@@ -47,7 +49,7 @@ int main()
 
     cout << endl;
 
-    chrono::steady_clock::time_point begin = chrono::steady_clock::now();
+    steady_clock::time_point t1 = steady_clock::now();
     TimerStartedObj.TimerStarted();
     //starting timer and making a warning about it
 
@@ -104,10 +106,10 @@ int main()
         }
     }
 
-    chrono::steady_clock::time_point end = chrono::steady_clock::now();
-    cout << chrono::duration_cast<chrono::minutes>(end - begin).count();
-    Timetaken = chrono::duration_cast<chrono::minutes>(end - begin).count();
-    //ends the time recording and assigns it to Timetaken
+    steady_clock::time_point t2 = steady_clock::now();  
+    duration<double> time_span = duration_cast<duration<double>>(t2 - t1);
+    Timetaken = time_span.count() / 60;
+    //ends the time recording then converting it to minute and assigns it to Timetaken
 
     GameEndedObj.GameEnded(Timetaken);
     //gives the minutes to the function where it's checked if it has decimal or not

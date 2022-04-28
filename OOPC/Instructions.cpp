@@ -15,14 +15,12 @@ void Instructions::GetInstructions()
 
 void Instructions::GameEnded(int k)
 {   
-    cout << k << endl;
     cout << "Your time is " << k << " minutes" << endl;
     //If the time was a whole number then the player is going to get this ending.
 };
 
 void Instructions::GameEnded(double k)
 {   
-    cout << k << endl;
     minutes = k;
     seconds = minutes - (int)minutes;
     seconds = seconds * 60;
