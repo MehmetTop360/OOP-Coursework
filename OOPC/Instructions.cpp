@@ -15,21 +15,23 @@ void Instructions::GetInstructions()
 
 void Instructions::GameEnded(int k)
 {   
+    cout << k << endl;
     cout << "Your time is " << k << " minutes" << endl;
     //If the time was a whole number then the player is going to get this ending.
 };
 
 void Instructions::GameEnded(double k)
 {   
-    minutes = k / 60;
+    cout << k << endl;
+    minutes = k;
     seconds = minutes - (int)minutes;
     seconds = seconds * 60;
 
     if ((int)minutes >0) {
-        cout << "Your time is " << (int)minutes << " minutes" << " and " << seconds <<" seconds!" << endl;
+        cout << "Your time is " << (int)minutes << " minutes" << fixed << setprecision(2) << " and " << seconds <<" seconds!" << endl << fixed << setprecision(0);
     }
     else {
-        cout << "Your time is " << seconds << " seconds!" << endl;
+        cout << "Your time is " << fixed << setprecision(2) << seconds << " seconds!" << endl << fixed << setprecision(0);
     }
     //If the timer was not a whole number then the player is going to get this ending.
 };
@@ -47,7 +49,7 @@ void Instructions::ScoreandCondition(int r, int e, int y)
     //If the player finished without losing their all chances then the player will get this ending
 };
 
-void Instructions::ScoreandCondition(int r, int e)
+void Instructions::ScoreandCondition(int r)
 {
     cout << "Your 3 chances have run out! So, the game has ended and you lost!" << endl;
 
@@ -58,4 +60,9 @@ void Instructions::ScoreandCondition(int r, int e)
         cout << "Your score is " << r << ". You will make it next time!" << endl;
     }
     //If the player finished by losing their all chances then the player will get this ending
+};
+
+void Instructions::GoodScore(int score)
+{
+    cout << endl << "Your score is " << score << "! Wow! Keep going!" << endl;
 };

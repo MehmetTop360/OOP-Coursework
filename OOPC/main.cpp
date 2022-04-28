@@ -15,13 +15,15 @@ using namespace std;
 
 int main()
 {
-    int i, n, m, t, l, temp, random, digits, minute, condition, answer, negchance, warning, score, chances, previousrandom, amountofGames = 0;
+    int i, n, m, t, l, temp, random, digits, round, minute, condition, answer, negchance, warning, score, chances, previousrandom, alreadydid, amountofGames = 0;
     double Timetaken = 0;
     random = 0;
     previousrandom = 0;
     chances = 3;
     score = 0;
     condition = 0;
+    alreadydid = 0;
+    round = 0;
 
     vector<string> vectorofelements = {"H- Hydrogen", "He - Helium", "Li - Lithium", "Be - Beryllium", "B - Boron", "C - Carbon", "N - Nitrogen", "O - Oxygen", "F - Fluorine", "Ne - Neon",
     "Na - Sodium", "Mg - Magnesium", "Al - Aluminum","Si - Silicon","P - Phosphorus","S - Sulfur","Cl - Chlorine","Ar - Argon","K - Potassium","Ca - Calcium","Sc - Scandium","Ti - Titanium","V - Vanadium","Cr - Chromium","Mn - Manganese","Fe - Iron","Co - Cobalt","Ni - Nickel","Cu - Copper", "Zn - Zinc","Ga - Gallium",
@@ -37,6 +39,7 @@ int main()
     Warner TimerStartedObj;
     Warner TimerStillOnObj;
     Warner GameEndedObj;
+    Warner MotivateObj;
 
     InstructionsObj.GetInstructions();
 
@@ -49,10 +52,11 @@ int main()
     //starting timer and making a warning about it
 
     for (amountofGames = 0; amountofGames < m; amountofGames++)
-    {
+    {   
+        round++;
         random = RandomObj.GetRandom();
         //getting a random number to ask
-        cout << endl << "Question No." << amountofGames + 1 << " - ";
+        cout << endl << "Question No." << round << " - ";
         cout << "What is the atomic number of " << vectorofelements.at(random) << "?" << endl;
         //asking a random element it's atomic number
 
@@ -74,11 +78,21 @@ int main()
         }
         //Checks the atomic number vector if it's at the same place in the element vector
 
-        if (amountofGames > 0 && amountofGames % 5 == 0)
+        if (score > 0 && score % 5 == 0)
+        {
+            if (alreadydid == 0 || round % 5 == 0)
+            {
+                MotivateObj.GoodScore(score);
+                alreadydid++;
+            }
+            //Trying to motivate the player by showing them their score
+        }
+
+        if (round > 0 && round % 5 == 0)
         {
             TimerStillOnObj.TimerWarner();
+            //Warns the player every now and then that the timer is still on
         }
-        //Warns the player every now and then that the timer is still on
 
         cout << endl << "__________________________________________________________________________________________" << endl << endl;
 
@@ -91,7 +105,8 @@ int main()
     }
 
     chrono::steady_clock::time_point end = chrono::steady_clock::now();
-    Timetaken = chrono::duration_cast<chrono::seconds>(end - begin).count();
+    cout << chrono::duration_cast<chrono::minutes>(end - begin).count();
+    Timetaken = chrono::duration_cast<chrono::minutes>(end - begin).count();
     //ends the time recording and assigns it to Timetaken
 
     GameEndedObj.GameEnded(Timetaken);
@@ -103,7 +118,7 @@ int main()
     }
     else 
     {
-        GameEndedObj.ScoreandCondition(score, chances);
+        GameEndedObj.ScoreandCondition(score);
     }
     //according to if the game was won with chances still being there or not different ending message
 };

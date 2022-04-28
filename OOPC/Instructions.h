@@ -12,5 +12,6 @@ public:
 	void GameEnded(int k) override;
 	void GameEnded(double k) override;
 	void ScoreandCondition(int r, int e, int y);
-	void ScoreandCondition(int r, int e);
+	void ScoreandCondition(int r);
+	void GoodScore(int score);
 };

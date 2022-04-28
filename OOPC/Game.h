@@ -3,6 +3,7 @@
 #include <iostream>     /* cin, cout */
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
+#include <iomanip>      /* setprecision */
 
 using namespace std;
 

@@ -8,6 +8,8 @@ class Branch : public Game
 {
 private:
 
+protected:
+
 public:
 	virtual void GetInstructions() = 0;
 	virtual void TimerStarted() = 0;

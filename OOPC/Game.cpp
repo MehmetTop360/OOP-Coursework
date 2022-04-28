@@ -4,7 +4,7 @@ using namespace std;
 
 void Game::WarningMessage(int m_chance)
 {
-	cout << "Wrong answer! Be careful your remainning chances are " << m_chance << "!" << endl << endl;
+	cout << "Wrong answer! Be careful your remaining chances are " << m_chance << "!" << endl << endl;
 	//warning the player about their remaining chances
 };
 
