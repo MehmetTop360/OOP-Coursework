@@ -9,6 +9,8 @@ protected:
 	double minutes = 0;
 public:
 	void GetInstructions() override;
-	void GameEnded(int r, int k, int y, int e) override;
-	void GameEnded(int r, double k, int y, int e) override;
+	void GameEnded(int k) override;
+	void GameEnded(double k) override;
+	void ScoreandCondition(int r, int e, int y);
+	void ScoreandCondition(int r, int e);
 };

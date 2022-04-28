@@ -3,6 +3,7 @@
 void Warner::TimerStarted()
 {
     cout << endl << "Warning! Your timer has started!" << endl;
+    cout << "__________________________________________________________________________________________" << endl << endl;
 };
 
 void Warner::TimerWarner()
