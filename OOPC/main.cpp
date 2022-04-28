@@ -4,6 +4,7 @@
 #include <chrono> /* for the time */
 #include <ctime> /* again for the time*/
 #include <ratio> /* period is a ratio type*/
+#include <math.h> /* for log operator*/
 
 //	g++ *.cpp -o run/
 
