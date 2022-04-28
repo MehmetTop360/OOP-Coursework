@@ -144,12 +144,14 @@
     <ClCompile Include="Randomizer.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Warner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Branch.h" />
     <ClInclude Include="Instructions.h" />
     <ClInclude Include="Randomizer.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Warner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
